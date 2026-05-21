@@ -1,0 +1,16 @@
+{
+    "slides": [
+        {
+            "name": "一名資工系大一學生",
+            "desc": "不只是寫Bug的學生，也是會Debug的開發者。<br>正在成為工程師的路上打怪升級！",
+            "image": "../pic/banner1.png",
+            "imageStyle": "max-width: 160%; top: 110px; left: 60px;"
+        },
+        {
+            "name": "想像力的實踐者<span style='color:#5bbfbf; font-size:20px;'>學徒版</span>",
+            "desc": "寫程式，也寫生活。<br>致力於<span style='color:#5bbfbf'>學習</span>用程式碼把腦海裡天馬行空的點子變成看得見的東西～",
+            "image": "../pic/banner3.png",
+            "imageStyle": "max-width: 150%; top: 20px; left: 60px;"
+        }
+    ]
+}

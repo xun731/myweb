@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薰雞蛋吐司の介紹</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link rel="stylesheet" type="text/css" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;900&display=swap">
+</head>
+
+<body>
+    <main>
+        <div class="about-layout">
+            <!-- 左邊內容 -->
+            <div class="about-content">
+                <section class="about-intro">
+                    <div class="intro-image">
+                        <img src="../pic/about.png" alt="插圖">
+                    </div>
+                    <div class="intro-text">
+                        <h2></h2>
+                        <p></p>
+                    </div>
+                    
+                </section>
+
+                <section class="about-reason">
+                    <h2></h2>
+                    <p></p>
+                </section>
+            </div>
+
+            <!-- 右邊側邊欄 -->
+            <div class="about-sidebar">
+                <div class="sidebar-controls">
+                    <button class="danmaku-btn active" onclick="filterTags('skill')">技能</button>
+                    <button class="danmaku-btn" onclick="filterTags('trait')">特質</button>
+                    <button class="danmaku-btn" onclick="filterTags('hobby')">興趣</button>
+                    <button class="danmaku-btn" onclick="filterTags('game')">遊戲</button>
+                </div>
+                <div class="sidebar-tags" id="tagList"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../main.js"></script>
+    <script src="about.js"></script>
+</body>
+
+</html>

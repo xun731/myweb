@@ -1,0 +1,24 @@
+{
+    "code": [
+        {
+            "title": "簡易抽卡系統",
+            "date": "2025/12",
+            "desc": "模擬遊戲中的抽卡機制，並圍繞抽卡建立完整的使用者系統。 玩家可建立個人帳號，透過小遊戲獲取金幣後進行抽卡， 所有資料以 csv 與 json 格式儲存於本地資料夾。",
+            "link": "projects/gachaSystem.html"
+        },
+        {
+            "title": "貪食蛇",
+            "date": "2022/6",
+            "desc": "用 Visual Basic 製作的貪食蛇單機小遊戲，包含毒蘋果、挑戰模式。",
+            "link": "projects/snake.html"
+        }
+    ],
+    "draw": [
+        {"image": "draw/001.png"},{"image": "draw/002.png"},{"image": "draw/003.png"},{"image": "draw/004.png"},
+        {"image": "draw/005.png"},{"image": "draw/006.png"},{"image": "draw/007.png"},{"image": "draw/008.png"},
+        {"image": "draw/009.png"},{"image": "draw/010.png"},{"image": "draw/011.png"},{"image": "draw/012.png"},
+        {"image": "draw/013.png"},{"image": "draw/014.png"},{"image": "draw/015.png"},{"image": "draw/016.jpg"},
+        {"image": "draw/017.jpg"},{"image": "draw/018.jpg"},{"image": "draw/019.jpg"},{"image": "draw/020.png"},
+        {"image": "draw/021.png"},{"image": "draw/022.png"},{"image": "draw/023.jpg"},{"image": "draw/024.png"}
+    ]
+}

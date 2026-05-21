@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貪食蛇 - 薰雞蛋吐司</title>
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;900&display=swap">
+</head>
+<body>
+    <main>
+        <article class="post">
+
+            <!-- 標題區 -->
+            <div class="post-header">
+                <h1 class="post-title">貪食蛇<span class="post-subtitle">精選版</span></h1>
+                <div class="post-tags">
+                    <span class="tag">Visual Basic</span>
+                    <span class="tag">2022</span>
+                    <span class="tag">高一上期末專題</span>
+                </div>
+                <a href="https://github.com/xun731/Snake-Game" target="_blank" class="post-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+
+            <!-- 內文 -->
+            <div class="post-body">
+                <p class="foreword">高一學了將近一學期的 Visual Basic，期末專題第一個想到的就是貪食蛇——經典、每個人都玩過，感覺做得出來（吧）。</p>
+                <p class="foreword">結果加著加著，功能越來越多，最後做出來的東西比原本預期的豐富不少。</p>
+
+                <h2>功能介紹</h2>
+                <p><strong>開始頁面</strong>　滑鼠移到按鈕上會有顏色變化，旁邊會跳出遊戲說明視窗，有點小互動感。</p>
+                <p><strong>遊戲設定</strong>　速度、音量、蛇身顏色都可以自己調，還有兩個額外模式可以開啟。</p>
+
+                <h2>三種遊戲模式</h2>
+                <ul>
+                    <li><strong>普通版</strong>：就是你認識的那個貪食蛇</li>
+                    <li><strong>毒蘋果模式</strong>：畫面會出現綠色蘋果，吃到扣分、身體不變長</li>
+                    <li><strong>挑戰版</strong>：速度固定最快，越吃越長，看你能撐多久</li>
+                </ul>
+
+                <p><strong>計分系統</strong>　即時分數 + 當局最高分紀錄，右側全程顯示。</p>
+                <p><strong>音效系統</strong>　每個頁面、每個動作都有對應的音效，吃蘋果、死亡、按按鈕各自不同。</p>
+                <p><strong>結束畫面</strong>　可以選擇重新開始（保留最高分）或回首頁（重啟程式）。</p>
+
+                <h2>已知問題</h2>
+                <p>最高分只在當局有效，重啟遊戲或回首頁後會歸零——因為沒有把紀錄寫入檔案，所以無法跨次保存。</p>
+            </div>
+
+            <!-- 圖片輪播 -->
+            <div class="post-gallery">
+                <button class="gallery-arrow left" onclick="prevSlide()">&#8249;</button>
+                <div class="gallery-track" id="galleryTrack">
+                    <div class="gallery-slide">
+                        <img src="postPic/snake/001.png" alt="開始畫面">
+                        <p class="gallery-caption">開始頁面</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/snake/002.png" alt="遊玩規則">
+                        <p class="gallery-caption">遊玩規則</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/snake/003.png" alt="設定畫面">
+                        <p class="gallery-caption">設定畫面</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/snake/004.png" alt="毒蘋果模式">
+                        <p class="gallery-caption">毒蘋果模式介紹</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/snake/005.png" alt="挑戰模式">
+                        <p class="gallery-caption">挑戰模式介紹</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/snake/006.png" alt="開始倒數">
+                        <p class="gallery-caption">開始倒數</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/snake/007.png" alt="毒蘋果遊玩畫面">
+                        <p class="gallery-caption">毒蘋果遊玩畫面</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/snake/008.png" alt="挑戰模式遊玩畫面">
+                        <p class="gallery-caption">挑戰模式遊玩畫面</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/snake/009.png" alt="死亡畫面">
+                        <p class="gallery-caption">死亡畫面</p>
+                    </div>
+                </div>
+                <button class="gallery-arrow right" onclick="nextSlide()">&#8250;</button>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- 圖片放大 lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <script src="../../main.js"></script>
+    <script src="post.js"></script>
+</body>
+</html>

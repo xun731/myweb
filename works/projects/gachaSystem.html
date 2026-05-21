@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡易抽卡系統 - 薰雞蛋吐司</title>
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;900&display=swap">
+</head>
+<body>
+    <main>
+        <article class="post">
+
+            <!-- 標題區 -->
+            <div class="post-header">
+                <h1 class="post-title">簡易抽卡系統</h1>
+                <div class="post-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">2025</span>
+                    <span class="tag">大一上期末專題</span>
+                </div>
+                <a href="https://github.com/xun731/Simple-Gacha-System" target="_blank" class="post-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+
+            <!-- 內文 -->
+            <div class="post-body">
+                <p class="foreword">玩了這麼多年手遊，每次最期待的就是抽卡了！於是期末專題就決定自己來做一個，抽到爽為止！</p>
+                <p class="foreword">從登入系統、抽卡機制、資料儲存，到小遊戲獲取金幣，整個系統從零開始設計。</p>
+
+                <h2>功能介紹</h2>
+                <p><strong>帳號系統</strong>　輸入用戶名稱登入，第一次使用會自動建立帳號。每個帳號的資料都存在獨立的資料夾裡，切換帳號或登出都不會影響其他人的紀錄。也可以刪除帳號，但刪了就真的找不回來了。</p>
+                <p><strong>抽卡</strong>　單抽或十連抽，每抽消耗一枚金幣。卡片分三種稀有度——R、SR、SSR，有保底機制，每 80 抽必出 SSR。</p>
+                <p><strong>查詢抽卡紀錄</strong>　顯示總抽數、已獲得的 SSR 數量、距離下次保底還差幾抽，以及每一筆抽卡的詳細紀錄（時間、稀有度、卡片名稱）。</p>
+                <p><strong>背包</strong>　查看目前擁有的所有卡片，依系列和編號排列，跳號就代表還沒抽到那張。</p>
+                <p><strong>圖鑑</strong>　查看所有可以抽到的卡片清單，輸入系列名稱後顯示該系列完整內容。</p>
+
+                <h2>小遊戲（金幣來源）</h2>
+                <ul>
+                    <li><strong>數字炸彈</strong>：在範圍內猜出隱藏數字，用越少次猜中金幣越多</li>
+                    <li><strong>猜拳</strong>：贏得 3 枚金幣，平手重來，輸了摸摸鼻子</li>
+                </ul>
+
+                <p><strong>計分系統</strong>　即時分數 + 當局最高分紀錄，右側全程顯示。</p>
+                <p><strong>音效系統</strong>　每個頁面、每個動作都有對應的音效，吃蘋果、死亡、按按鈕各自不同。</p>
+                <p><strong>結束畫面</strong>　可以選擇重新開始（保留最高分）或回首頁（重啟程式）。</p>
+
+                <h2>已知問題</h2>
+                <p>資料以明文儲存在本地，直接打開檔案就能修改金幣或抽卡紀錄，完全沒有防作弊機制。另外金幣的修改方法是公開的，理論上外部程式可以直接存取——這在單機版不是問題，但如果要變成連線遊戲就會是很大的漏洞。</p>
+            </div>
+
+            <!-- 圖片輪播 -->
+            <div class="post-gallery">
+                <button class="gallery-arrow left" onclick="prevSlide()">&#8249;</button>
+                <div class="gallery-track" id="galleryTrack">
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/001.png" alt="登入">
+                        <p class="gallery-caption">登入</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/002.png" alt="建立新帳號">
+                        <p class="gallery-caption">建立新帳號</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/003.png" alt="資料結構">
+                        <p class="gallery-caption">資料結構</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/004.png" alt="抽卡">
+                        <p class="gallery-caption">抽卡</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/005.png" alt="抽卡紀錄">
+                        <p class="gallery-caption">抽卡紀錄</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/006.png" alt="背包">
+                        <p class="gallery-caption">背包</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/007.png" alt="圖鑑">
+                        <p class="gallery-caption">圖鑑</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/008.png" alt="登出">
+                        <p class="gallery-caption">登出</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/009.png" alt="刪除帳號">
+                        <p class="gallery-caption">刪除帳號</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/010.png" alt="成功刪除帳號">
+                        <p class="gallery-caption">成功刪除帳號</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/011.png" alt="小遊戲">
+                        <p class="gallery-caption">小遊戲</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/012.png" alt="數字炸彈">
+                        <p class="gallery-caption">數字炸彈</p>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="postPic/gachaSystem/013.png" alt="猜拳">
+                        <p class="gallery-caption">猜拳</p>
+                    </div>
+                </div>
+                <button class="gallery-arrow right" onclick="nextSlide()">&#8250;</button>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- 圖片放大 lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <script src="../../main.js"></script>
+    <script src="post.js"></script>
+</body>
+</html>
