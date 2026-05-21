@@ -33,13 +33,29 @@ function loadNav() {
 
 function getBasePath() {
     const path = window.location.pathname;
-    const depth = path.split('/').filter(p => p !== '').length;
-    // 根目錄深度
-    if (depth <= 2) return './';
-    if (depth === 3) return '../';
-    if (depth === 4) return '../../';
-    return '../'.repeat(depth - 2);
+    
+    // projects 資料夾深兩層
+    if (path.includes('/projects/')) return '../../';
+    
+    // 其他頁面深一層
+    if (path.includes('/home/') || 
+        path.includes('/about/') || 
+        path.includes('/works/') || 
+        path.includes('/notes/')) return '../';
+    
+    // 根目錄
+    return './';
 }
+
+// function getBasePath() {
+//     const path = window.location.pathname;
+//     const depth = path.split('/').filter(p => p !== '').length;
+//     // 根目錄深度
+//     if (depth <= 2) return './';
+//     if (depth === 3) return '../';
+//     if (depth === 4) return '../../';
+//     return '../'.repeat(depth - 2);
+// }
 
 // function getPath() {
 //     const depth = window.location.pathname.split('/').length;
