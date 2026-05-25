@@ -75,7 +75,25 @@ main {
     white-space: nowrap;
 }
 
-/* Draw 網格 */
+.loading-hint {
+    width: 100%;
+    padding: 60px 0;
+    text-align: center;
+    color: #a0c0c8;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.loading-dots {
+    display: inline-block;
+    animation: dotPulse 1.2s ease infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
 .draw-grid {
     position: relative;
 }
@@ -94,7 +112,6 @@ main {
     user-select: none;
 }
 
-/* 繪圖的進場 */
 @keyframes fadeInUp {
     from { transform: translateY(20px); opacity: 0; }
     to   { transform: translateY(0); opacity: 1; }

@@ -53,6 +53,62 @@ function filterWorks(type) {
     renderWorks(type);
 }
 
+function renderDraw(items) {
+    const list = document.getElementById('worksList');
+    list.className = 'draw-grid';
+    list.innerHTML = '';
+
+    // 顯示載入提示
+    const loading = document.createElement('div');
+    loading.className = 'loading-hint';
+    loading.innerHTML = `<span>圖片載入中</span><span class="loading-dots">...</span>`;
+    list.appendChild(loading);
+
+    const FIXED_HEIGHT = 200;
+    const GAP = 16;
+    let loadedCount = 0;
+    const imgs = [];
+
+    items.forEach((item, i) => {
+        const card = document.createElement('div');
+        card.className = 'draw-card';
+        card.style.opacity = '0';
+
+        const img = document.createElement('img');
+        img.src = item.image;
+        img.alt = '插圖';
+        img.style.height = FIXED_HEIGHT + 'px';
+        img.style.width = 'auto';
+        img.style.display = 'block';
+        img.style.pointerEvents = 'none';
+        img.style.userSelect = 'none';
+
+        card.appendChild(img);
+        list.appendChild(card);
+        imgs.push({ card, img });
+
+        img.onload = () => {
+            loadedCount++;
+            if (loadedCount === items.length) {
+                loading.remove();  // 移除載入提示
+                layoutDraw(imgs, GAP, FIXED_HEIGHT);
+                imgs.forEach(({ card }, i) => {
+                    card.style.animation = `fadeInUp 0.5s ease ${i * 0.1}s forwards`;
+                });
+            }
+        };
+
+        // 圖片載入失敗
+        img.onerror = () => {
+            loadedCount++;
+            if (loadedCount === items.length) {
+                loading.remove();
+                layoutDraw(imgs, GAP, FIXED_HEIGHT);
+            }
+        };
+    });
+}
+
 // 繪圖排版
 function renderDraw(items) {
     const list = document.getElementById('worksList');
