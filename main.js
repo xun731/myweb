@@ -33,37 +33,16 @@ function loadNav() {
 
 function getBasePath() {
     const path = window.location.pathname;
-    
-    // projects 資料夾深兩層
+
     if (path.includes('/projects/')) return '../../';
     
-    // 其他頁面深一層
     if (path.includes('/home/') || 
         path.includes('/about/') || 
         path.includes('/works/') || 
         path.includes('/notes/')) return '../';
     
-    // 根目錄
     return './';
 }
-
-// function getBasePath() {
-//     const path = window.location.pathname;
-//     const depth = path.split('/').filter(p => p !== '').length;
-//     // 根目錄深度
-//     if (depth <= 2) return './';
-//     if (depth === 3) return '../';
-//     if (depth === 4) return '../../';
-//     return '../'.repeat(depth - 2);
-// }
-
-// function getPath() {
-//     const depth = window.location.pathname.split('/').length;
-//     return depth <= 3 ? '' : '../';
-// }
-// 如果找不到檔案就改成下面這個，然後把上面註解取消
-// <button onclick="location.href='${getPath()}home/home.html'">首頁</button>
-
 
 // 個人選單
 function toggleContact() {
@@ -71,14 +50,12 @@ function toggleContact() {
     dropdown.classList.toggle('show');
 }
 
-// 點選單以外的地方關閉
 document.addEventListener('click', function(e) {
     if (!e.target.closest('.nav-avatar')) {
         document.getElementById('contactDropdown').classList.remove('show');
     }
 });
 
-// 頭像的胡言亂語
 const speeches = [
     '點開有我的一些社群帳號喔!',
     '好...好暈!!',
@@ -120,13 +97,9 @@ avatar.addEventListener('mouseleave', () => {
 
 // 判斷目前頁面加底線
 const currentPage = window.location.pathname;
-// console.log(window.location.pathname);
 document.querySelectorAll('nav button').forEach(btn => {
-    // console.log(btn.getAttribute('onclick'))
     const target = btn.getAttribute('onclick')
-        // .replace("location.href='", '')
         .replace(".html'", '');
-    // console.log(target.split('/').pop())
     if (currentPage.includes(target.split('/').pop())) {
         btn.classList.add('active-btn');
     }
@@ -134,12 +107,9 @@ document.querySelectorAll('nav button').forEach(btn => {
 
 // 關於我的轉場
 function goToAbout() {
-    // 隱藏滑桿用的，之後頁面內容多到原本就有滑桿的話就刪掉
     document.body.style.overflow = 'hidden'; 
-
     document.querySelector('main').classList.add('page-exit');
 
-    // 建立覆蓋層
     const overlay = document.createElement('div');
     overlay.id = 'transition-overlay';
     document.body.appendChild(overlay);
@@ -160,10 +130,9 @@ function goToAbout() {
             tag.style.fontSize = (30 + Math.floor(Math.random() * 16)) + 'px';
             tag.style.opacity = (0.7 + Math.random() * 0.3).toString();
             overlay.appendChild(tag);
-        }, i * 5);  // 間隔 8ms，非常密集
+        }, i * 5); 
     }
 
-    // 更快跳頁
     setTimeout(() => {
         location.href = '../about/about.html';
     }, 800);

@@ -21,7 +21,6 @@ function renderWorks(type) {
             const card = document.createElement('div');
             card.className = 'work-card';
             card.style.opacity = '0';
-            // card.style.animation = `tagCardInLeft 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 0.12}s forwards`;
             
             card.innerHTML = `
                 <div class="work-card-main">
@@ -40,7 +39,6 @@ function renderWorks(type) {
         });
         animateCards(cards);
     } else {
-        // list.style.all = '';
         renderDraw(worksData.draw);
     }
 }
@@ -88,7 +86,6 @@ function renderDraw(items) {
             loadedCount++;
             if (loadedCount === items.length) {
                 layoutDraw(imgs, GAP, FIXED_HEIGHT);
-                // 進場動畫
                 imgs.forEach(({ card }, i) => {
                     card.style.animation = `fadeInUp 0.5s ease ${i * 0.1}s forwards`;
                 });
@@ -100,11 +97,8 @@ function renderDraw(items) {
 function layoutDraw(imgs, gap, height) {
     const container = document.getElementById('worksList');
     const containerWidth = container.clientWidth;
-
-    // 計算每張圖的寬度
     const widths = imgs.map(({ img }) => img.naturalWidth * (height / img.naturalHeight));
 
-    // 分行
     let rows = [];
     let currentRow = [];
     let currentWidth = 0;
@@ -140,7 +134,6 @@ function layoutDraw(imgs, gap, height) {
             x += widths[imgIndex] + (isLastRow ? gap : totalGap);
         });
 
-        // 設定容器高度
         container.style.position = 'relative';
         container.style.height = (rows.length * (height + gap)) + 'px';
     });

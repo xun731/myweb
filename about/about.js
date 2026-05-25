@@ -1,8 +1,6 @@
-// 頁面載入時，內容從左邊飛入
 window.addEventListener('load', () => {
     document.querySelector('main').classList.add('page-enter');
 
-    // 手動設定關於我的底線
     document.querySelectorAll('nav button').forEach(btn => {
         const onclick = btn.getAttribute('onclick');
         // console.log(onclick)
@@ -14,7 +12,6 @@ window.addEventListener('load', () => {
     });
 });
 
-// 抓取文字內容
 fetch('about.json')
     .then(res => res.json())
     .then(data => {
@@ -22,9 +19,7 @@ fetch('about.json')
         document.querySelector('.intro-text p').innerHTML = data.intro.text;
         document.querySelector('.about-reason h2').textContent = data.reason.title;
         document.querySelector('.about-reason p').textContent = data.reason.text;
-        
-        // 初始化彈幕
-        // initDanmaku(data.tags);
+
     });
 
 

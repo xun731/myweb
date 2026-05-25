@@ -7,7 +7,6 @@ window.addEventListener('load', () => {
     const slides = Array.from(track.querySelectorAll('.gallery-slide'));
     totalPages = Math.ceil(slides.length / SLIDES_PER_PAGE);
 
-    // 建立分頁
     const wrapper = document.createElement('div');
     wrapper.className = 'gallery-slides-wrapper';
 

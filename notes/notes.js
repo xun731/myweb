@@ -21,7 +21,6 @@ function renderNotes(type) {
         card.className = 'post-card';
         card.style.opacity = '0';
         
-        // 判斷是否有 img
         const imgHTML = item.image
             ? `<img class="post-img" src="${item.image}" alt="${item.title}">` 
             : '';
@@ -37,7 +36,6 @@ function renderNotes(type) {
             </div>
         `;
         card.addEventListener('click', () => {
-            // location.href = item.link;
             window.open(item.link, '_blank');
         });
         list.appendChild(card);

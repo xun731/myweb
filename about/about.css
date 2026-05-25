@@ -38,8 +38,6 @@ main {
     gap: 20px;
 }
 
-/* .intro-text { flex: 2; } */
-
 .intro-text h2 {
     font-size: 28px;
     font-weight: 900;
@@ -86,7 +84,6 @@ main {
 
 /* 右邊側邊欄 */
 .about-sidebar {
-    /* flex: 1; */
     position: sticky;
     top: 90px;
     background: white;
@@ -162,7 +159,6 @@ main {
     padding: 16px 20px;
     border: 1px solid rgba(91, 191, 191, 0.15);
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    /* animation: slideInUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; */
 }
 
 .tag-card:hover {

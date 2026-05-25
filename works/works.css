@@ -35,34 +35,18 @@ main {
     border-color: #5bbfbf;
 }
 
-/* Code 卡片 */
-/* #worksList {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-} */
-
 .work-card {
     background: white;
     border-radius: 20px;
     padding: 25px 30px;
     box-shadow: 0 8px 30px rgba(91, 191, 191, 0.12);
     cursor: pointer;
-    /* transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); */
     transition: box-shadow 0.3s ease;
 }
 
 .work-card:hover {
-    /* transform: translateY(-4px); */
     box-shadow: 0 14px 35px rgba(91, 191, 191, 0.5);
-    /* animation: hoverShake 0.15s linear 3; */
 }
-/* @keyframes hoverShake {
-  0% {transform: skew(0deg,0deg);}
-  25% {transform: skew(15deg, 15deg);}
-  75% {transform: skew(-15deg, -15deg);}
-  100% {transform: skew(0deg,0deg);}
-} */
 
 .work-card-main {
     display: flex;
