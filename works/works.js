@@ -91,6 +91,7 @@ function renderDraw(items) {
         img.onload = () => {
             loadedCount++;
             if (loadedCount === items.length) {
+                loading.remove();
                 layoutDraw(imgs, GAP, FIXED_HEIGHT);
                 imgs.forEach(({ card }, i) => {
                     card.style.animation = `fadeInUp 0.5s ease ${i * 0.1}s forwards`;
