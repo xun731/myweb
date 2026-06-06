@@ -2,8 +2,7 @@
 
 個人作品集網站｜HTML / CSS｜2026
 
-🔗 **網站連結**：https://xun731.netlify.app/
-
+🔗 **網站連結**：https://xun-web.vercel.app/
 ## 簡介
 
 以 HTML/CSS 從零自行設計與開發的個人作品集網站。
